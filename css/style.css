@@ -6,23 +6,30 @@
 
 .game-board {
   width: 100%;
-  height: 500px;
+  height: 80vh;
+  max-height: 700px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   border-bottom: 15px solid rgb(9, 255, 0);
   overflow: hidden;
   background: linear-gradient(#87ceeb, #e0f6ff);
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.486);
 }
 
 .pipe {
   position: absolute;
   bottom: 0;
-  width: 80px;
+  width: 10%;
+  max-width: 80px;
   animation: pipe-animation 2s infinite linear;
 }
 
 .mario {
-  width: 150px;
+  width: 15%;
   position: absolute;
   bottom: 0px;
 }
@@ -33,23 +40,24 @@
 
 .clouds {
   position: absolute;
-  width: 450px;
+  width: 50%;
   animation: clouds-animations 20s infinite linear;
 }
 
 .gameover {
   position: absolute;
-  width: 60%;
-  height: auto;
-  margin: 0 auto;
-  top: 100px;
+  width: 50%;
+  height: auto; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: none;
   z-index: 2;
 }
 
 @keyframes pipe-animation {
   from {
-    right: -80px;
+    right: -10%;
   }
 
   to {
@@ -63,19 +71,19 @@
   }
 
   40% {
-    bottom: 215px;
+    bottom: 30%;
   }
 
   50% {
-    bottom: 215px;
+    bottom: 30%;
   }
 
   60% {
-    bottom: 215px;
+    bottom: 30%;
   }
 
   70% {
-    bottom: 215px;
+    bottom: 30%;
   }
 
   100% {
@@ -85,10 +93,57 @@
 
 @keyframes clouds-animations {
   from {
-    right: -550px;
+    right: -50%;
   }
 
   to {
     right: 100%;
   }
+}
+
+@media (max-width: 600px) {
+  .game-board {
+    height: 60vh;
+    border-bottom-width: 10px;
+  }
+
+  .pipe {
+    width: 15%;
+    max-width: 60px;
+  }
+  .mario {
+    width: 20%;
+    max-width: 100px;
+  }
+  .clouds {
+    width: 60%;
+    max-width: 300px;
+  }
+
+  @keyframes jump {
+     0% {
+            bottom: 0;
+        }
+
+        40% {
+            bottom: 35%; /* Ajuste o pulo para telas menores, se necessário */
+        }
+
+        50% {
+            bottom: 35%;
+        }
+
+        60% {
+            bottom: 35%;
+        }
+
+        70% {
+            bottom: 35%;
+        }
+
+        100% {
+            bottom: 0;
+        }
+  }
+
 }
