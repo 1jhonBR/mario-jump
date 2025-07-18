@@ -1,7 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.score-board {
+    position: absolute; /* Posição absoluta para poder mover livremente */
+    top: 20px; /* 20 pixels do topo */
+    right: 20px; /* 20 pixels da direita */
+    font-family: 'Press Start 2P', cursive; /* Sugestão de fonte estilo pixel, mas se não tiver, usará a padrão */
+    font-size: 1.5em; /* Tamanho da fonte */
+    color: #fff; /* Cor branca para o texto */
+    text-shadow: 2px 2px 0px #000; /* Sombra preta para destacar */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+    padding: 10px 15px; /* Espaçamento interno */
+    border-radius: 8px; /* Cantos arredondados */
 }
 
 .game-board {
